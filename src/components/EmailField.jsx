@@ -13,12 +13,15 @@ var EmailField = React.createClass({
       this.setState({valid: true, value:e.target.value});
     }
   },
+  clear(){
+    this.setState({valid:"true", value:''})
+  },
   render(){
     var formClass = this.state.valid ? "form-group" : "form-group has-error";
-    console.log(formClass);
     return(
       <div className={formClass}>
-        <input className="form-control" onChange={this.onChange} placeholder="Email"
+        <input className="form-control"
+        onChange={this.onChange} placeholder="Email"
         value={this.state.value}
         />
       </div>
